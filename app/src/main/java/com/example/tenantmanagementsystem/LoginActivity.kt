@@ -34,7 +34,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.registerTextView.setOnClickListener {
+            val email = binding.emailEditText.text.toString().trim()
             val intent = Intent(this, RegisterActivity::class.java)
+            intent.putExtra("EMAIL", email)
             startActivity(intent)
         }
     }
